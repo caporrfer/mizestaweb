@@ -7,7 +7,7 @@ const { view, interactive = false } = Astro.props;
 const total = products.reduce((sum, item) => sum + item.price, 0);
 ---
 <div class:list={['app-screen', `app-screen--${view}`]}>
-  <div class="app-topbar"><span class="app-wordmark">miCesta<span>.</span></span><span class="app-profile">A</span></div>
+  <div class="app-topbar"><span class="app-wordmark">miZesta<span>.</span></span><span class="app-profile">A</span></div>
   {view === 'list' && <>
     <div class="app-heading"><span class="app-eyebrow">LO BUENO EMPIEZA AQUÍ</span><h3>La compra<br/>de la semana<span>.</span></h3></div>
     <div class="list-meta"><span class="shop-tag"><img src="/images/mercadona.svg" width="20" height="20" alt=""/>Mercadona</span><span class="avatars" aria-label="Compartida por dos personas"><span>A</span><span>M</span><Icon name="people" size={13}/></span></div>

@@ -4,7 +4,7 @@ import '../styles/global.css';
 import Brand from '../components/Brand.astro';
 import Icon from '../components/Icon.astro';
 // GitHub Pages sirve esta página para cualquier ruta que no existe, incluidos los enlaces de
-// invitación `/u/<token>`. Con la app instalada iOS abre el enlace en miCesta y esta página no
+// invitación `/u/<token>`. Con la app instalada iOS abre el enlace en miZesta y esta página no
 // llega a verse (enlace universal, ver /.well-known/apple-app-site-association).
 // Enlace público de TestFlight: vacío mientras no haya beta pública (no se enseña el botón).
 const testFlightUrl = '';
@@ -16,12 +16,12 @@ const testFlightUrl = '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A100C" />
     <meta name="robots" content="noindex" />
-    <title>Invitación a miCesta</title>
-    <meta name="description" content="Te han invitado a una lista de la compra compartida en miCesta." />
-    <meta property="og:site_name" content="miCesta" />
+    <title>Invitación a miZesta</title>
+    <meta name="description" content="Te han invitado a una lista de la compra compartida en miZesta." />
+    <meta property="og:site_name" content="miZesta" />
     <meta property="og:title" content="Te han invitado a una lista de la compra" />
-    <meta property="og:description" content="Ábrela en miCesta para verla y editarla a la vez." />
-    <meta property="og:image" content="https://micesta.online/images/social-card.png" />
+    <meta property="og:description" content="Ábrela en miZesta para verla y editarla a la vez." />
+    <meta property="og:image" content="https://mizesta.site/images/social-card.png" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
@@ -32,16 +32,16 @@ const testFlightUrl = '';
         <section class="invite-card" data-invite hidden aria-labelledby="invite-title">
           <img class="invite-logo" src="/images/brand-logo.webp" width="88" height="88" alt="" />
           <h1 id="invite-title">Te han invitado<br /><span>a una lista.</span></h1>
-          <p>Con miCesta en el iPhone, este enlace abre la lista directamente. Si no se ha abierto, pulsa el botón.</p>
-          <a class="button" data-open href="micompra://">Abrir en miCesta <Icon name="diagonal" size={20} /></a>
-          {testFlightUrl && <a class="button button--small" href={testFlightUrl}>Instalar miCesta (TestFlight) <Icon name="diagonal" size={17} /></a>}
+          <p>Con miZesta en el iPhone, este enlace abre la lista directamente. Si no se ha abierto, pulsa el botón.</p>
+          <a class="button" data-open href="micompra://">Abrir en miZesta <Icon name="diagonal" size={20} /></a>
+          {testFlightUrl && <a class="button button--small" href={testFlightUrl}>Instalar miZesta (TestFlight) <Icon name="diagonal" size={17} /></a>}
           <p class="invite-help">¿Sigue sin abrirse? En la app ve a <strong>Listas → + → Unirse con un enlace</strong> y pega este código:</p>
           <code class="invite-code" data-token></code>
         </section>
         <section class="invite-card" data-missing aria-labelledby="missing-title">
           <h1 id="missing-title">Esta página<br /><span>no existe.</span></h1>
           <p>Puede que el enlace esté incompleto.</p>
-          <a class="button" href="/">Ir a miCesta <Icon name="diagonal" size={20} /></a>
+          <a class="button" href="/">Ir a miZesta <Icon name="diagonal" size={20} /></a>
         </section>
       </main>
     </div>
@@ -54,7 +54,7 @@ const testFlightUrl = '';
         document.querySelector('[data-missing]').hidden = true;
         document.querySelector('[data-open]').href = 'micompra://unirse/' + token;
         document.querySelector('[data-token]').textContent = token.match(/.{4}/g).join('-');
-        document.title = 'Te han invitado a una lista · miCesta';
+        document.title = 'Te han invitado a una lista · miZesta';
       }
     </script>
   </body>

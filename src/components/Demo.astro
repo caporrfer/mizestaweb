@@ -9,10 +9,10 @@ const views = [
 ] as const;
 ---
 <section class="demo-section section-shell" id="descubre" aria-labelledby="demo-title">
-  <div class="section-topline"><span class="eyebrow"><span class="tiny-square"></span> ASÍ SE SIENTE MICESTA</span><span class="section-index" aria-hidden="true">01 — 03</span></div>
+  <div class="section-topline"><span class="eyebrow"><span class="tiny-square"></span> ASÍ SE SIENTE MIZESTA</span><span class="section-index" aria-hidden="true">01 — 03</span></div>
   <div class="demo-layout" data-demo>
     <div class="demo-controls"><h2 id="demo-title">Menos lío.<br/><span>Más vida.</span></h2>
-      <div class="demo-tabs" role="tablist" aria-label="Funciones de miCesta">
+      <div class="demo-tabs" role="tablist" aria-label="Funciones de miZesta">
         {views.map((view, index) => <button class="demo-tab" id={`tab-${view.id}`} role="tab" type="button" aria-selected={index === 0 ? 'true' : 'false'} aria-controls={`panel-${view.id}`} tabindex={index === 0 ? 0 : -1} data-view={view.id}><span class="tab-number">{view.number}</span><Icon name={view.icon} size={23}/><span>{view.label}</span><Icon name="diagonal" size={24} class="tab-arrow"/></button>)}
       </div>
       <div class="demo-caption"><span class="small-dot"></span><span>Demo ilustrativa</span><span class="demo-caption-line"></span><span>Hecha para tu día a día</span></div>

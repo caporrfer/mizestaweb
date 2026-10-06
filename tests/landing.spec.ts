@@ -27,7 +27,7 @@ for (const width of [360, 390, 768, 1440]) {
 
 test('La demo conserva la lista y actualiza el contador al cambiar de vista', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Descubre miCesta', exact: true }).first().click();
+  await page.getByRole('link', { name: 'Descubre miZesta', exact: true }).first().click();
   await expect(page).toHaveURL(/#descubre$/);
   const check = page.getByRole('checkbox', { name: 'Marcar Aguacates como comprado' });
   await check.check();
@@ -97,7 +97,7 @@ test('Sin JavaScript mantiene la presentación y la lista inicial', async ({ bro
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('#panel-list')).toBeVisible();
   await expect(page.locator('#panel-list .product-row')).toHaveCount(5);
-  await page.getByRole('link', { name: 'Descubre miCesta', exact: true }).first().click();
+  await page.getByRole('link', { name: 'Descubre miZesta', exact: true }).first().click();
   await expect(page).toHaveURL(/#descubre$/);
   await context.close();
 });

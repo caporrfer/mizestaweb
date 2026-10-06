@@ -1,6 +1,6 @@
-# miCesta · web
+# miZesta · web
 
-Landing estática de miCesta para iPhone, construida con Astro y TypeScript. Diseño negro y verde, tipografía Manrope local y demostración de listas, comparación entre supermercados y gastos.
+Landing estática de miZesta para iPhone, construida con Astro y TypeScript. Diseño negro y verde, tipografía Manrope local y demostración de listas, comparación entre supermercados y gastos.
 
 ## Desarrollo
 
@@ -29,7 +29,7 @@ La salida estática se genera en `dist/`. No necesita servidor de aplicación, c
 - Los datos son ficticios, incluidos los precios y los tickets. La comparación muestra productos similares y cantidades equivalentes; no es una oferta ni una cotización actual.
 - Sin JavaScript, la presentación y la lista inicial siguen visibles.
 
-Los botones «Descubre miCesta» enlazan a la demostración. El estado público es «Próximamente en iPhone»; no hay enlaces ficticios de descarga ni formularios de registro.
+Los botones «Descubre miZesta» enlazan a la demostración. El estado público es «Próximamente en iPhone»; no hay enlaces ficticios de descarga ni formularios de registro.
 
 ## Recursos y contenido
 
@@ -43,10 +43,10 @@ Marca, ilustración de fondo y logos de supermercados procedentes de `caporrfer/
 
 ## Alojamiento
 
-GitHub Pages en `https://micesta.online` (DNS en Nominalia), publicado por `.github/workflows/deploy.yml` en cada push a
-`main` con `SITE_URL=https://micesta.online`.
+GitHub Pages en `https://mizesta.site` (DNS en Nominalia), publicado por `.github/workflows/deploy.yml` en cada push a
+`main` con `SITE_URL=https://mizesta.site`.
 
-- `public/.well-known/apple-app-site-association`: hace que los enlaces `https://micesta.online/u/<token>` abran la app
+- `public/.well-known/apple-app-site-association`: hace que los enlaces `https://mizesta.site/u/<token>` abran la app
   (enlace universal, app `6682L7H62W.com.caporrfer.Mi-Compra`). No cambiarle el nombre ni redirigirlo.
 - `src/pages/404.astro`: lo que ve quien abre una invitación sin la app (GitHub Pages lo sirve para `/u/<token>`), con
   botón a `micompra://unirse/<token>` y el código para pegarlo en la app. Cualquier otra ruta inexistente muestra

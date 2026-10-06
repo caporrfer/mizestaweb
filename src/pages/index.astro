@@ -8,7 +8,7 @@ import Phone from '../components/Phone.astro';
 import AppScreen from '../components/AppScreen.astro';
 import Demo from '../components/Demo.astro';
 import { supermarkets } from '../data/demo';
-const description = 'Tu compra. Bajo control. Descubre miCesta: listas compartidas, comparación entre supermercados y tus gastos en un solo lugar. Próximamente en iPhone.';
+const description = 'Tu compra. Bajo control. Descubre miZesta: listas compartidas, comparación entre supermercados y tus gastos en un solo lugar. Próximamente en iPhone.';
 const siteUrl = Astro.site;
 const shareImage = siteUrl ? new URL('/images/social-card.png', siteUrl).href : '/images/social-card.png';
 ---
@@ -18,18 +18,18 @@ const shareImage = siteUrl ? new URL('/images/social-card.png', siteUrl).href : 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A100C" />
-    <title>miCesta — Tu compra. Bajo control.</title>
+    <title>miZesta — Tu compra. Bajo control.</title>
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="miCesta" />
-    <meta property="og:title" content="miCesta — Tu compra. Bajo control." />
+    <meta property="og:site_name" content="miZesta" />
+    <meta property="og:title" content="miZesta — Tu compra. Bajo control." />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={shareImage} />
     <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="miCesta. Tu compra. Bajo control. Próximamente en iPhone." />
+    <meta property="og:image:alt" content="miZesta. Tu compra. Bajo control. Próximamente en iPhone." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="miCesta — Tu compra. Bajo control." />
+    <meta name="twitter:title" content="miZesta — Tu compra. Bajo control." />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImage} />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
@@ -39,10 +39,10 @@ const shareImage = siteUrl ? new URL('/images/social-card.png', siteUrl).href : 
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="site-wrap" id="inicio">
-      <header class="site-header section-shell"><Brand/><div class="header-right"><span class="release-label"><span class="small-dot"></span> Próximamente en iPhone</span><Button small>Descubre miCesta</Button></div></header>
+      <header class="site-header section-shell"><Brand/><div class="header-right"><span class="release-label"><span class="small-dot"></span> Próximamente en iPhone</span><Button small>Descubre miZesta</Button></div></header>
       <main id="contenido">
         <section class="hero section-shell" aria-labelledby="hero-title">
-          <div class="hero-copy"><span class="eyebrow hero-eyebrow"><span class="tiny-square"></span> TU NUEVA FORMA DE HACER LA COMPRA</span><h1 id="hero-title">Tu compra.<br/><span>Bajo<br class="desktop-break"/> control.</span></h1><div class="hero-action"><Button>Descubre miCesta</Button><span class="hero-platform">Diseñada para iPhone</span></div><div class="hero-bottom-note"><span class="hero-note-line"></span><span>Menos vueltas. Mejor compra.</span></div></div>
+          <div class="hero-copy"><span class="eyebrow hero-eyebrow"><span class="tiny-square"></span> TU NUEVA FORMA DE HACER LA COMPRA</span><h1 id="hero-title">Tu compra.<br/><span>Bajo<br class="desktop-break"/> control.</span></h1><div class="hero-action"><Button>Descubre miZesta</Button><span class="hero-platform">Diseñada para iPhone</span></div><div class="hero-bottom-note"><span class="hero-note-line"></span><span>Menos vueltas. Mejor compra.</span></div></div>
           <div class="hero-visual"><span class="hero-halo" aria-hidden="true"></span><span class="hero-orbit" aria-hidden="true"></span><img class="hero-botanical" src="/images/wallpaper.webp" alt="" width="768" height="1660" fetchpriority="high"/><span class="visual-kicker" aria-hidden="true">LA COMPRA, REIMAGINADA.</span>
             <div class="hero-phone hero-phone--compare"><Phone decorative><AppScreen view="compare"/></Phone></div>
             <div class="hero-phone hero-phone--expenses"><Phone decorative><AppScreen view="expenses"/></Phone></div>
@@ -55,7 +55,7 @@ const shareImage = siteUrl ? new URL('/images/social-card.png', siteUrl).href : 
         </section>
         <section class="supermarkets section-shell" aria-label="Supermercados del catálogo"><p>LOS SÚPER DE SIEMPRE. <span>EN TU BOLSILLO.</span></p><div class="supermarket-logos">{supermarkets.map((shop) => <div class="supermarket-logo"><img src={`/images/${shop.logo}.svg`} alt={shop.name} width="116" height="44" loading="lazy"/></div>)}</div></section>
         <Demo/>
-        <section class="closing section-shell" aria-labelledby="closing-title"><div class="closing-card"><img class="closing-wallpaper" src="/images/wallpaper.webp" width="768" height="1660" alt="" loading="lazy"/><div class="closing-content"><img class="closing-logo" src="/images/brand-logo.webp" width="88" height="88" alt="" loading="lazy"/><h2 id="closing-title">Tu próxima compra<br/>empieza <span>aquí.</span></h2><span class="closing-release"><span class="small-dot"></span> Próximamente en iPhone</span><a class="back-to-demo" href="#descubre">Descubre miCesta <Icon name="diagonal" size={19}/></a></div><span class="closing-spark" aria-hidden="true"><Icon name="spark" size={66}/></span></div></section>
+        <section class="closing section-shell" aria-labelledby="closing-title"><div class="closing-card"><img class="closing-wallpaper" src="/images/wallpaper.webp" width="768" height="1660" alt="" loading="lazy"/><div class="closing-content"><img class="closing-logo" src="/images/brand-logo.webp" width="88" height="88" alt="" loading="lazy"/><h2 id="closing-title">Tu próxima compra<br/>empieza <span>aquí.</span></h2><span class="closing-release"><span class="small-dot"></span> Próximamente en iPhone</span><a class="back-to-demo" href="#descubre">Descubre miZesta <Icon name="diagonal" size={19}/></a></div><span class="closing-spark" aria-hidden="true"><Icon name="spark" size={66}/></span></div></section>
       </main>
       <footer class="site-footer section-shell"><Brand small/><span>Tu compra. Bajo control.</span><a href="#inicio" aria-label="Volver al inicio"><Icon name="arrow" size={19}/></a></footer>
     </div>
