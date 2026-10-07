@@ -107,3 +107,20 @@ test('Todos los enlaces locales apuntan a secciones existentes', async ({ page }
   const invalid = await page.locator('a[href^="#"]').evaluateAll((anchors) => anchors.map((anchor) => anchor.getAttribute('href') ?? '').filter((href) => !document.querySelector(href)));
   expect(invalid).toEqual([]);
 });
+
+test('La política de privacidad es accesible y app-ads.txt declara la cuenta de AdMob', async ({ page, request }) => {
+  for (const width of [360, 1440]) {
+    await page.setViewportSize({ width, height: 960 });
+    await page.goto('/privacidad');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Política de privacidad.');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(results.violations).toEqual([]);
+  }
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Privacidad' }).click();
+  await expect(page).toHaveURL(/\/privacidad\/?$/);
+  const adsTxt = await request.get('/app-ads.txt');
+  expect(adsTxt.status()).toBe(200);
+  expect(await adsTxt.text()).toContain('google.com, pub-3474558100899194, DIRECT, f08c47fec0942fa0');
+});

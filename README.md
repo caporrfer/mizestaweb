@@ -51,6 +51,11 @@ GitHub Pages en `https://mizesta.site` (DNS en Nominalia), publicado por `.githu
 - `src/pages/404.astro`: lo que ve quien abre una invitación sin la app (GitHub Pages lo sirve para `/u/<token>`), con
   botón a `micompra://unirse/<token>` y el código para pegarlo en la app. Cualquier otra ruta inexistente muestra
   «Esta página no existe». Cuando haya beta pública, poner el enlace de TestFlight en `testFlightUrl`.
+- `src/pages/privacidad.astro` → `https://mizesta.site/privacidad`: política de privacidad de la app. Esa URL está en el
+  mensaje de consentimiento (RGPD) de AdMob y en App Store Connect: no la muevas. Si la app empieza a enviar datos a un
+  servicio nuevo, añádelo en «Con quién compartimos datos» y cambia la fecha.
+- `public/app-ads.txt`: declara la cuenta de AdMob de miZesta (`pub-3474558100899194`) como vendedor autorizado. AdMob lo
+  comprueba en el dominio de la «URL de marketing» de la ficha de la App Store.
 
 ## Pruebas de interfaz
 

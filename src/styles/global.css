@@ -37,6 +37,19 @@
   .invite-help { font-size: 13px !important; margin-top: 8px; }
   .invite-help strong { color: var(--cream); }
   .invite-code { font: 700 18px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; color: var(--green); background: #0a100c80; padding: 12px 16px; border-radius: 12px; user-select: all; }
+  .legal { max-width: 760px; padding-block: 56px 72px; }
+  .legal h1 { font-size: clamp(38px, 8vw, 60px); line-height: 1.05; letter-spacing: -.03em; }
+  .legal h1 span, .legal a { color: var(--green); }
+  .legal a { text-decoration: underline; text-underline-offset: 3px; }
+  .legal h2 { font-size: 21px; margin: 40px 0 12px; }
+  .legal p, .legal li { color: var(--muted); font-size: 16px; line-height: 1.65; }
+  .legal p + p { margin-top: 12px; }
+  .legal strong { color: var(--cream); }
+  .legal ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+  .legal ul + p { margin-top: 14px; }
+  .legal p + ul { margin-top: 10px; }
+  .legal-updated { margin: 14px 0 28px; font-size: 13px !important; }
+  .footer-link { text-decoration: underline; text-underline-offset: 3px; }
   .site-header { height: 108px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; z-index: 2; }
   .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 27px; font-weight: 800; letter-spacing: -1.2px; }
   .brand img { width: 37px; height: 37px; border-radius: 10px; }
