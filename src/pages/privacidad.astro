@@ -6,7 +6,7 @@ import Icon from '../components/Icon.astro';
 // Política de privacidad de la app miZesta. Su URL (https://mizesta.site/privacidad) está en el mensaje de
 // consentimiento de AdMob y en App Store Connect: no la cambies sin actualizar los dos sitios.
 // Si la app empieza a usar un servicio nuevo que reciba datos personales, añádelo en «Con quién compartimos datos».
-const updated = '7 de octubre de 2026';
+const updated = '11 de octubre de 2026';
 const contact = 'caporrfer@gmail.com';
 const description = 'Qué datos trata la app miZesta, para qué, con quién se comparten y cómo ejercer tus derechos.';
 ---
@@ -42,12 +42,14 @@ const description = 'Qué datos trata la app miZesta, para qué, con quién se c
         <ul>
           <li><strong>Cuenta:</strong> tu correo electrónico, el nombre que muestras y, si entras con Google o Apple, el identificador que te asigna ese servicio. Si te registras con correo, tu contraseña se guarda cifrada y nunca la vemos.</li>
           <li><strong>Lo que creas en la app:</strong> listas de la compra y sus productos, las personas con las que las compartes, recetas (con sus fotos, si las añades) y las valoraciones y opiniones que escribes sobre productos.</li>
+          <li><strong>Denuncias y bloqueos:</strong> si denuncias una opinión o bloqueas a su autor, guardamos qué opinión o qué persona, el motivo y la fecha, para revisar la denuncia y para no enseñarte lo que has bloqueado.</li>
           <li><strong>Fotos que envías para leerlas:</strong> si usas la búsqueda por foto o la lectura de tickets, la foto se envía a nuestro servidor para extraer el texto (ver «Con quién compartimos datos»). No guardamos esas fotos en el servidor.</li>
           <li><strong>Publicidad:</strong> si usas la versión gratuita, Google AdMob trata el identificador de publicidad de tu dispositivo (solo si das permiso de rastreo), la dirección IP, datos aproximados de ubicación derivados de ella, datos del dispositivo y cómo interactúas con los anuncios.</li>
           <li><strong>Suscripción:</strong> si te suscribes a miZesta Premium, el estado de tu suscripción y el historial de compras asociado a tu cuenta. El pago lo gestiona Apple; nunca vemos los datos de tu tarjeta.</li>
           <li><strong>Datos técnicos:</strong> registros del servidor (fecha, dirección IP, operación) y contadores de uso de las funciones con límite diario, para la seguridad y el buen funcionamiento del servicio.</li>
         </ul>
         <p>Se quedan <strong>solo en tu dispositivo</strong> y no los recibimos: tus productos favoritos, tus supermercados favoritos, las fotos de tus tickets y tu historial de gastos.</p>
+        <p>Puedes ver productos y comparar precios <strong>sin cuenta</strong>: en ese caso no tratamos ningún dato de cuenta, solo los de publicidad y los técnicos.</p>
         <p>miZesta no usa la ubicación GPS, los contactos ni el micrófono. La cámara solo se usa cuando tú la abres para hacer una foto.</p>
 
         <h2>Para qué los usamos y con qué base legal</h2>
@@ -57,6 +59,7 @@ const description = 'Qué datos trata la app miZesta, para qué, con quién se c
           <li><strong>Mostrar anuncios personalizados y usar cookies o identificadores para ello</strong>: tu consentimiento, que pedimos al abrir la app y puedes retirar en cualquier momento.</li>
           <li><strong>Mostrar anuncios no personalizados</strong> y medir su rendimiento y evitar el fraude: interés legítimo en financiar la versión gratuita.</li>
           <li><strong>Seguridad</strong> (límites de uso, prevención de abusos, copias de seguridad): interés legítimo en proteger el servicio y a sus usuarios.</li>
+          <li><strong>Moderar las opiniones</strong> (revisar denuncias, retirar contenido que incumple los <a href="/terminos">términos de uso</a>): interés legítimo en mantener un servicio seguro.</li>
         </ul>
 
         <h2>Qué ven otras personas</h2>
@@ -66,23 +69,24 @@ const description = 'Qué datos trata la app miZesta, para qué, con quién se c
         <p>No vendemos tus datos. Solo los comparten los proveedores que necesitamos para que la app funcione, cada uno con su propia política:</p>
         <ul>
           <li><strong>Oracle Cloud</strong> (centro de datos de Madrid, España): aloja el servidor y la base de datos de miZesta.</li>
-          <li><strong>Tailscale</strong>: red por la que llegan las conexiones de la app al servidor. El tráfico va cifrado de extremo a extremo y Tailscale no puede leerlo.</li>
+          <li><strong>Cloudflare</strong>: red por la que llegan las conexiones de la app al servidor. Descifra el tráfico para encaminarlo hasta nuestro servidor, así que puede ver las peticiones de la app.</li>
+          <li><strong>Tailscale</strong>: red de reserva por la que llegan las conexiones de la app al servidor cuando Cloudflare no está disponible. El tráfico va cifrado de extremo a extremo y Tailscale no puede leerlo.</li>
           <li><strong>Resend</strong>: envío de los correos de verificación y recuperación de contraseña.</li>
           <li><strong>OpenAI</strong>: lee las fotos que envías para buscar productos o leer tickets. Se le envía solo la foto, sin tu nombre ni tu correo. OpenAI no las usa para entrenar sus modelos y, según sus condiciones, puede conservarlas hasta 30 días para detectar abusos.</li>
           <li><strong>Google</strong>: inicio de sesión con Google (si lo eliges) y anuncios a través de Google AdMob, incluida la gestión del consentimiento. Más información en <a href="https://policies.google.com/technologies/partner-sites?hl=es">cómo usa Google los datos de las apps que utilizan sus servicios</a>.</li>
           <li><strong>Apple</strong>: inicio de sesión con Apple (si lo eliges) y cobro de la suscripción.</li>
           <li><strong>RevenueCat</strong>: gestiona el estado de la suscripción Premium. Recibe el identificador interno de tu cuenta y tus compras en la app, no tu nombre ni tu correo.</li>
         </ul>
-        <p>Algunos de estos proveedores (Google, Apple, OpenAI, Resend, RevenueCat y Tailscale) pueden tratar datos fuera del Espacio Económico Europeo, sobre todo en Estados Unidos. En esos casos la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.</p>
+        <p>Algunos de estos proveedores (Google, Apple, OpenAI, Resend, RevenueCat, Cloudflare y Tailscale) pueden tratar datos fuera del Espacio Económico Europeo, sobre todo en Estados Unidos. En esos casos la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.</p>
 
         <h2>Anuncios y consentimiento</h2>
         <p>La versión gratuita muestra anuncios en la sección de Productos. La primera vez que abres la app te preguntamos si aceptas el uso de datos para anuncios personalizados. Después, iOS te pregunta si permites el rastreo entre apps. Si no aceptas, verás anuncios igualmente, pero menos relevantes. Puedes cambiar tu elección en cualquier momento en <strong>Ajustes de la app → Privacidad de los anuncios</strong> y, para el rastreo, en <strong>Ajustes del iPhone → Privacidad y seguridad → Rastreo</strong>. Con miZesta Premium no se muestran anuncios.</p>
 
         <h2>Cuánto tiempo guardamos los datos</h2>
-        <p>Mientras tengas la cuenta. Si la borras, se eliminan tu perfil, tus listas propias, tus recetas y tus valoraciones. Las copias de seguridad del servidor se borran solas en un máximo de 7 días. Los registros técnicos se conservan el tiempo mínimo necesario para la seguridad del servicio.</p>
+        <p>Mientras tengas la cuenta. Puedes borrarla tú mismo en la app, en <strong>Ajustes → Eliminar cuenta</strong>: se eliminan al momento tu perfil, tus listas propias, tus recetas, tus valoraciones, tus denuncias y bloqueos, y lo guardado de esa cuenta en el dispositivo. Las copias de seguridad del servidor se borran solas en un máximo de 7 días. Los registros técnicos se conservan el tiempo mínimo necesario para la seguridad del servicio.</p>
 
         <h2>Tus derechos</h2>
-        <p>Puedes pedir acceso a tus datos, rectificarlos, borrarlos (incluida tu cuenta completa), oponerte a su tratamiento, limitarlo o recibirlos en un formato portable. Escribe a <a href={`mailto:${contact}`}>{contact}</a> desde el correo de tu cuenta y te responderemos en un plazo máximo de un mes. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la <a href="https://www.aepd.es">Agencia Española de Protección de Datos</a>.</p>
+        <p>Puedes pedir acceso a tus datos, rectificarlos, borrarlos (la cuenta completa la puedes borrar tú desde la app), oponerte a su tratamiento, limitarlo o recibirlos en un formato portable. Escribe a <a href={`mailto:${contact}`}>{contact}</a> desde el correo de tu cuenta y te responderemos en un plazo máximo de un mes. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la <a href="https://www.aepd.es">Agencia Española de Protección de Datos</a>.</p>
 
         <h2>Menores</h2>
         <p>miZesta no está dirigida a menores de 14 años y no tratamos sus datos a sabiendas. Si crees que un menor de esa edad nos ha dado datos, escríbenos y los borraremos.</p>

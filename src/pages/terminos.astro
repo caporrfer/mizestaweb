@@ -1,0 +1,102 @@
+---
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import Brand from '../components/Brand.astro';
+import Icon from '../components/Icon.astro';
+// Términos de uso de la app miZesta. Su URL (https://mizesta.site/terminos) está en la app (acceso y Ajustes),
+// en el paywall de RevenueCat y en App Store Connect: no la cambies sin actualizar esos sitios.
+// App Store los exige por la suscripción (guía 3.1.2) y por las opiniones públicas (guía 1.2: tolerancia cero
+// con el contenido ofensivo).
+const updated = '11 de octubre de 2026';
+const contact = 'caporrfer@gmail.com';
+const appleEula = 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
+const description = 'Condiciones de uso de la app miZesta: cuenta, opiniones, suscripción Premium y responsabilidades.';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A100C" />
+    <title>Términos de uso · miZesta</title>
+    <meta name="description" content={description} />
+    <meta property="og:site_name" content="miZesta" />
+    <meta property="og:title" content="Términos de uso de miZesta" />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {Astro.site && <link rel="canonical" href={new URL('/terminos', Astro.site).href} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="site-wrap" id="inicio">
+      <header class="site-header section-shell"><Brand href="/" /></header>
+      <main class="legal section-shell" id="contenido">
+        <h1>Términos de <span>uso.</span></h1>
+        <p class="legal-updated">Última actualización: {updated}</p>
+
+        <p>Estos términos regulan el uso de la app <strong>miZesta</strong> para iPhone y iPad. Al crear una cuenta o usar la app los aceptas. Si no estás de acuerdo, no uses la app.</p>
+
+        <h2>Quién presta el servicio</h2>
+        <p>Carlos Porras, desarrollador de miZesta. Contacto: <a href={`mailto:${contact}`}>{contact}</a>.</p>
+
+        <h2>Qué es miZesta</h2>
+        <p>miZesta te ayuda a hacer listas de la compra, compartirlas, guardar recetas, llevar tus gastos y comparar productos y precios entre supermercados.</p>
+        <ul>
+          <li><strong>Los precios, ofertas y datos de los productos son orientativos.</strong> Los recogemos de las webs públicas de los supermercados y pueden no estar actualizados o contener errores. El precio que vale es el del supermercado en el momento de la compra.</li>
+          <li><strong>La información nutricional es orientativa</strong> y en algunos productos es una estimación. No la uses para decisiones médicas ni para controlar alergias o intolerancias: consulta siempre la etiqueta del producto.</li>
+          <li>Las comparaciones entre supermercados buscan productos <strong>parecidos</strong>, no idénticos.</li>
+          <li>miZesta no está afiliada a ningún supermercado ni la patrocinan. Los nombres, logotipos y marcas de los supermercados y de los productos pertenecen a sus dueños y se usan solo para identificarlos.</li>
+        </ul>
+
+        <h2>Tu cuenta</h2>
+        <p>Puedes ver productos y comparar precios sin cuenta. Para lo demás necesitas una cuenta gratuita. Tienes que tener al menos 14 años, dar datos ciertos y cuidar de tu acceso: eres responsable de lo que se haga con tu cuenta. Puedes borrarla cuando quieras en <strong>Ajustes → Eliminar cuenta</strong>.</p>
+
+        <h2>Opiniones y normas de conducta</h2>
+        <p>Las opiniones que publicas sobre productos son visibles para el resto de usuarios con tu nombre. <strong>En miZesta no se tolera el contenido ofensivo ni a los usuarios que abusan.</strong> No está permitido publicar:</p>
+        <ul>
+          <li>insultos, acoso, amenazas o contenido que incite al odio o a la discriminación;</li>
+          <li>contenido sexual, violento o ilegal;</li>
+          <li>spam, publicidad, enlaces o contenido que no tenga que ver con el producto;</li>
+          <li>información falsa o engañosa a sabiendas;</li>
+          <li>datos personales de otras personas.</li>
+        </ul>
+        <p>Cualquier usuario puede <strong>denunciar una opinión</strong> o <strong>bloquear a su autor</strong> desde la propia opinión. Revisamos las denuncias en un plazo máximo de 24 horas: retiramos el contenido que incumpla estas normas y podemos suspender o cerrar las cuentas de quien las incumpla. Una opinión que reciben varias personas como ofensiva se oculta mientras la revisamos.</p>
+        <p>Sigues siendo dueño de lo que escribes. Al publicarlo nos das permiso, gratuito y mientras esté publicado, para mostrarlo en la app.</p>
+
+        <h2>Listas compartidas</h2>
+        <p>Quien tenga el enlace de invitación de una lista puede unirse a ella y verla y cambiarla. Comparte el enlace solo con quien quieras. Si retiras a alguien de la lista, el enlace cambia.</p>
+
+        <h2>Plan gratuito, anuncios y miZesta Premium</h2>
+        <p>miZesta es gratuita y se financia con anuncios. La versión gratuita tiene límites de uso diario en algunas funciones, que se pueden ampliar viendo anuncios cuando hay alguno disponible.</p>
+        <p><strong>miZesta Premium</strong> es una suscripción mensual que quita los anuncios y los límites:</p>
+        <ul>
+          <li>El precio se muestra en la app antes de suscribirte. Puede incluir un periodo de prueba gratuito; si te suscribes durante la prueba, pierdes la parte que quede.</li>
+          <li>El pago se carga a tu cuenta de Apple al confirmar la compra.</li>
+          <li><strong>La suscripción se renueva sola</strong> cada mes al mismo precio salvo que la canceles al menos 24 horas antes de que termine el periodo en curso. La renovación se cobra en las 24 horas anteriores al final del periodo.</li>
+          <li>Puedes gestionarla o cancelarla en <strong>Ajustes del iPhone → tu nombre → Suscripciones</strong>. Al cancelar, sigues teniendo Premium hasta el final del periodo pagado.</li>
+          <li>Los cobros y reembolsos los gestiona Apple según sus condiciones. <strong>Borrar tu cuenta de miZesta no cancela la suscripción.</strong></li>
+        </ul>
+
+        <h2>Licencia de la app</h2>
+        <p>La app se te concede bajo el <a href={appleEula}>Contrato de licencia de usuario final estándar de Apple</a>, que estos términos completan. Si hay alguna contradicción entre ambos sobre el uso de la app, prevalecen estos términos salvo en lo que el contrato de Apple exija como mínimo.</p>
+
+        <h2>Uso correcto</h2>
+        <p>No puedes usar miZesta para fines ilegales, intentar acceder a datos de otras personas, sobrecargar o atacar el servicio, ni copiar o extraer de forma masiva el catálogo. El diseño, el código y los textos de la app son de miZesta.</p>
+
+        <h2>Disponibilidad y responsabilidad</h2>
+        <p>Hacemos lo posible por que miZesta funcione bien, pero el servicio se ofrece tal cual y puede tener interrupciones o errores. No respondemos de decisiones de compra basadas en precios o datos orientativos ni de lo que publiquen otros usuarios, salvo en lo que la ley no permita excluir. Nada de esto limita los derechos que te da la ley como consumidor.</p>
+
+        <h2>Privacidad</h2>
+        <p>Cómo tratamos tus datos se explica en la <a href="/privacidad">política de privacidad</a>.</p>
+
+        <h2>Cambios y fin del servicio</h2>
+        <p>Podemos cambiar estos términos. Si el cambio es importante, te avisaremos en la app antes de que se aplique. También podemos dejar de ofrecer miZesta avisando con antelación razonable.</p>
+
+        <h2>Ley aplicable</h2>
+        <p>Estos términos se rigen por la ley española. Si eres consumidor, puedes reclamar ante los tribunales de tu domicilio.</p>
+      </main>
+      <footer class="site-footer section-shell"><Brand small href="/" /><span>Tu compra. Bajo control. · <a class="footer-link" href="/">Inicio</a></span><a href="#inicio" aria-label="Volver al inicio"><Icon name="arrow" size={19} /></a></footer>
+    </div>
+  </body>
+</html>

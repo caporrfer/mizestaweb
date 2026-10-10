@@ -124,3 +124,21 @@ test('La política de privacidad es accesible y app-ads.txt declara la cuenta de
   expect(adsTxt.status()).toBe(200);
   expect(await adsTxt.text()).toContain('google.com, pub-3474558100899194, DIRECT, f08c47fec0942fa0');
 });
+
+test('Los términos de uso son accesibles y dicen lo que exige la App Store', async ({ page }) => {
+  for (const width of [360, 1440]) {
+    await page.setViewportSize({ width, height: 960 });
+    await page.goto('/terminos');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Términos de uso.');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(results.violations).toEqual([]);
+  }
+  // Guía 1.2: tolerancia cero con el contenido ofensivo; guía 3.1.2: renovación automática y EULA.
+  await expect(page.getByText('no se tolera el contenido ofensivo')).toBeVisible();
+  await expect(page.getByText('La suscripción se renueva sola')).toBeVisible();
+  await expect(page.getByRole('link', { name: /Contrato de licencia de usuario final estándar de Apple/ })).toHaveAttribute('href', /apple\.com\/legal/);
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Términos' }).click();
+  await expect(page).toHaveURL(/\/terminos\/?$/);
+});
